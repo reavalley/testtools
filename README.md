@@ -2,7 +2,7 @@
 
 Test Tools provides classes to make testing easier.
 
-Inherit from Builder<,> to allow easy creation of test objects with an fluent interface to create objects in a BDD manner.
+Inherit from Builder<,> to allow easy creation of test objects with a fluent interface to create objects in a BDD manner.
 
 Create Builder class
 ```c#
