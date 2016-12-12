@@ -2,21 +2,37 @@
 
 Test Tools provides classes to make testing easier.
 
-Inherit from Builder<,> to allow easy creation of test objects with a fluent interface to create objects in a BDD manner.
+Use fluent interface of Builder class to create objects in a BDD manner.
 
-Create Builder class
+Example usage
 ```c#
-private class PetBuilder : Builder<Pet, PetBuilder>
+var result = Builder.For<Pet>()
+        .With(x => x.Name, "Beed")
+        .With(x => x.Age, 5)
+        .With(x => x.Breed, "Border Jack")
+        .Build();
+```
+
+Use the BuilderComponent class to aid reuse.
+```c#
+public class PetBuilder 
 {
-    
+    public static BuilderComponent<Pet> Default()
+    {
+        return new BuilderComponent<Pet>()
+            .With(x => x.Name, "Beed")
+            .With(x => x.Age, 5)
+            .With(x => x.Breed, "Border Jack")
+            .With(x => x.Toys, new List<string>()
+            {
+                "Ball",
+                "Ring"
+            });
+    }
 }
 ```
 
-Use fluent interface to create object.
+Example usage
 ```c#
-var result = PetBuilder.Init()
-      .With(x => x.Name, "Beed")
-      .With(x => x.Age, 5)
-      .With(x => x.Breed, "Border Jack")
-      .Build();
+var result = PetBuilder.Default().Build();
 ```
