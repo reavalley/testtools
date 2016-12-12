@@ -23,7 +23,7 @@ namespace Rvs.TestTools.Tests
                 Toys = toys
             };
 
-            var result = PetBuilder.Init()
+            var result = Builder.For<Pet>()
                 .With(x => x.Name, "Beed")
                 .With(x => x.Age, 5)
                 .With(x => x.Breed, "Border Jack")
@@ -61,11 +61,11 @@ namespace Rvs.TestTools.Tests
             Assert.AreEqual(expected.Toys, result.Toys);
         }
         
-        private class PetBuilder : Builder<Pet, PetBuilder>
+        private class PetBuilder 
         {
-            public static PetBuilder Default()
+            public static BuilderComponent<Pet> Default()
             {
-                return Init()
+                return new BuilderComponent<Pet>()
                     .With(x => x.Name, "Beed")
                     .With(x => x.Age, 5)
                     .With(x => x.Breed, "Border Jack")

@@ -4,25 +4,21 @@ using System.Reflection;
 
 namespace Rvs.TestTools
 {
-    public abstract class Builder<TOutput, TBuilder> : IBuilder<TOutput> where TBuilder : class
+    public class BuilderComponent<TOutput> : IBuilder<TOutput> where TOutput : class
     {
         private TOutput _instance;
-        public static TBuilder Init()
-        {
-            return Activator.CreateInstance<TBuilder>();
-        }
-
-        public TBuilder With<T>(Expression<Func<TOutput, T>> memberLamda, T value)
+        
+        public BuilderComponent<TOutput> With<T>(Expression<Func<TOutput, T>> memberLamda, T value)
         {
             if (_instance == null)
                 _instance = Activator.CreateInstance<TOutput>();
 
             var memberSelectorExpression = memberLamda.Body as MemberExpression;
-            if (memberSelectorExpression == null) return this as TBuilder;
+            if (memberSelectorExpression == null) return this;
 
             var property = memberSelectorExpression.Member as PropertyInfo;
             property?.SetValue(_instance, value, null);
-            return this as TBuilder;
+            return this;
         }
 
         public TOutput Build()

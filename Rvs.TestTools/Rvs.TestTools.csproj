@@ -40,7 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Builder`2.cs" />
+    <Compile Include="Builder.cs" />
+    <Compile Include="BuilderComponent.cs" />
     <Compile Include="IBuilder`1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
