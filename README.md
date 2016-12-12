@@ -1,8 +1,10 @@
 # Test Tools
 
-Test Tools provides classes to make testing easier.
+Test Tools is a set of tools intended to be used during unit testing.
 
-Use fluent interface of Builder class to create objects in a BDD manner.
+#### H4 Builder
+
+A generic implementation of the Builder pattern to allow fluent BDD style creation of objects.
 
 Example usage
 ```c#
