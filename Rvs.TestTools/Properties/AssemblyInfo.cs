@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Rvs.TestTools")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Use expressions to build objects for use in unit tests")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Rea Valley Software Ltd")]
 [assembly: AssemblyProduct("Rvs.TestTools")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]

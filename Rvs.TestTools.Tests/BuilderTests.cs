@@ -61,7 +61,7 @@ namespace Rvs.TestTools.Tests
             Assert.AreEqual(expected.Toys, result.Toys);
         }
         
-        private class PetBuilder 
+        class PetBuilder 
         {
             public static BuilderComponent<Pet> Default()
             {
