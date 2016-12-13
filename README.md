@@ -2,7 +2,7 @@
 
 Test Tools is a set of tools intended to be used during unit testing.
 
-#### H4 Builder
+#### Builder
 
 A generic implementation of the Builder pattern to allow fluent BDD style creation of objects.
 
